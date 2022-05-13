@@ -7,6 +7,7 @@ CREATE TABLE tbl_profissional (
 	nome VARCHAR(180) NOT NULL,
 	nascimento VARCHAR(10) NOT NULL,
 	email VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
 	telefone VARCHAR(9),
 	celular VARCHAR(14) NOT NULL,
 	rg VARCHAR(9) NOT NULL,

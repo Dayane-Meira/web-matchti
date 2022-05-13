@@ -14,7 +14,7 @@ def professionals():
     try:
         conn = mysql.connect()
         cursor = conn.cursor(cursors.DictCursor)
-        cursor.execute("SELECT * FROM tbl_profissional")
+        cursor.execute("SELECT id, nome, nascimento, email, telefone, celular, rg, cpf, area, descricao FROM tbl_profissional")
         profs = cursor.fetchall()
         if not profs:
             message = {
@@ -37,17 +37,45 @@ def professional_by_id(id):
     try:
         conn = mysql.connect()
         cursor = conn.cursor(cursors.DictCursor)
-        cursor.execute("SELECT * FROM tbl_profissional WHERE id=%s", id)
-        profs = cursor.fetchone()
-        if not profs:
+        cursor.execute("SELECT id, nome, nascimento, email, telefone, celular, rg, cpf, area, descricao FROM tbl_profissional WHERE id=%s", id)
+        prof = cursor.fetchone()
+        if not prof:
             message = {
                 'status' : 404,
                 'Message' : "Sem profissionais cadastrados!"
             }
             return jsonify(message), 404
-        response = jsonify(profs)
+        response = jsonify(prof)
         response.status_code = 200
         return response
+    except Exception as e:
+        return jsonify({'Error':f'{e}'})
+    finally:
+        cursor.close()
+        conn.close()
+
+@app.route('/profissional/login', methods=['POST'])
+def login_professional():
+    try:
+        email = request.form['email']
+        senha = request.form['senha']
+        if email and senha and request.method == 'POST':
+            data = (email, senha)
+            conn = mysql.connect()
+            cursor = conn.cursor(cursors.DictCursor)
+            cursor.execute("SELECT id, nome, nascimento, email, telefone, celular, rg, cpf, area, descricao FROM tbl_profissional WHERE email=%s AND senha=%s", data)
+            prof = cursor.fetchone()
+            if not prof:
+                message = {
+                'status': 401,
+                'Mensagem': 'Login incorreto. Tente novamente!'
+                }
+                return jsonify(message), 401
+            response = jsonify(prof)
+            response.status_code = 200
+            return response
+        else:
+            return not_found()
     except Exception as e:
         return jsonify({'Error':f'{e}'})
     finally:
@@ -61,17 +89,18 @@ def create_professional():
         nome = request.form['nome']
         nascimento = request.form['nascimento']
         email = request.form['email']
+        senha = request.form['senha']
         telefone = request.form['telefone']
         celular = request.form['celular']
         rg = request.form['rg']
         cpf = request.form['cpf']
         area = request.form['area']
         descricao = request.form['descricao']
-        if nome and nascimento and email and celular and rg and cpf and area and descricao and request.method == 'POST':
-            data = (nome, nascimento, email, telefone, celular, rg, cpf, area, descricao)
+        if nome and nascimento and email and senha and celular and rg and cpf and area and descricao and request.method == 'POST':
+            data = (nome, nascimento, email, senha, telefone, celular, rg, cpf, area, descricao)
             conn = mysql.connect()
             cursor = conn.cursor(cursors.DictCursor)
-            cursor.execute("INSERT INTO tbl_profissional VALUES (default, %s, %s, %s, %s, %s, %s, %s, %s, %s)", data)
+            cursor.execute("INSERT INTO tbl_profissional VALUES (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", data)
             conn.commit()
             message = {
                 'status': 200,
