@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/login-style.css">
+    <link rel="shortcut icon" href="/imgs/logo.jpg" type="image/x-icon">
+
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <header>
+        <nav class="navbar">
+            <h2>Match<span>TI</span></h2>
+            <ul class="menu">
+                <li><a href="/index.html" class="menu-btn">Home</a></li>
+                <li><a href="/template-profissionais.html">Técnicos</a></li>
+                <li><a href="/index.html#about" class="menu-btn">Sobre nós</a></li>
+                <li><a href="/index.html#services" class="menu-btn">Serviços</a></li>
+                <li><a href="/index.html#teams" class="menu-btn">Equipe</a></li>
+                <li><a href="/index.html#contact" class="menu-btn">Contatos</a></li>
+                <li><a href="/login.html" class="menu-btn">Cadastra/Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="container-content">
+            <section class="area form">
+                    <h2>Bem vindo a MatchTI</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur a.</p>
+
+                    <button class="btn-account-google"> <img src="https://img.icons8.com/color/50/000000/google-logo.png" /> Entre com sua conta Google</button>
+                    <form action="" method="GET">
+                        <label for="">Email</label>
+                        <br>
+                        <input class="input-login" type="email">
+                        <br>
+                        <label for="">Password</label>
+                        <br>
+                        <input class="input-login" type="password">
+                    </form>
+                    <p>Não é registrado?<a href="" class="btn-open-modal"> Crie sua conta</a></p>
+                        <a class="btn-login" href="usuario.html">Entrar</a>
+            </section>
+            <section class="area apresentacao">
+                <img src="/imgs/logo.jpg" alt="">
+            </section>
+        </main>
+
+        <div class="modal-container">
+            <section class="modal">
+                <fieldset>
+                    <h2>Preecha os campos abaixo</h2>
+                    <form action="" method="POST">
+                        <label for="">Seu nome</label>
+                        
+                        <input type="text" placeholder="Nome" >
+
+                        <label for="">Nascimento</label>
+                        
+                        <input type="date" name="data-nascimento" id="">
+                        
+                        <label for="">Area</label>
+                        
+                        <input type="text" placeholder="area">
+
+                        <label for="">Email</label>
+                        
+                        <input type="email">
+                        
+                        <label for="">Senha</label>
+                        
+                        <input type="password">
+                        
+                        <label for="">confirme sua senha</label>
+                        
+                        <input type="password">
+
+                    </form>
+                </fieldset>
+                <div class="campo-btn">
+                    <button class="btn btn-cadastrar">Cadastrar</button><br>
+                    <button class="btn btn-close-modal">Cancelar</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="/scripts/modal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 15px 00 15px 0;
+  font-family: "Ubuntu", sans-serif;
+  background: rgb(46, 46, 173);
+  color: antiquewhite;
+}
+
+nav span {
+  color: #1d1d1d;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu li,
+a {
+  padding: 00 10px;
+  color: whitesmoke;
+}
+
+.container-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 90vh;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.area h2 {
+  margin-bottom: 20px;
+  color: rgb(46, 46, 173);
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+}
+
+.area p {
+  text-align: center;
+}
+
+.btn-account-google {
+  display: flex;
+  margin: 20px auto;
+  padding: 10px 80px;
+  height: 60px;
+  align-items: center;
+  border-radius: 60px;
+  border: none;
+  background: rgba(255 255 255 0, 3);
+  cursor: pointer;
+}
+
+.btn-account-google img {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.btn-login {
+  position: relative;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px 80px;
+  align-items: center;
+  text-align: center;
+  font-weight: bolder;
+  left: 100px;
+  top: 20px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  color: black;
+}
+
+.btn-login:hover {
+  background: #1d55f0;
+  border: 2px solid #c1c1c1;
+  transition: all 0.5s ease;
+}
+
+form {
+  margin: 30px 00 30px;
+}
+
+.input-login {
+  width: 400px;
+  padding: 05px;
+  border-radius: 5px;
+  border: 1px solid #a5a5a5;
+  margin: 10px 00 5px 00;
+}
+
+.form {
+  margin: 0 auto;
+}
+
+.modal input[type="text"],
+.modal input[type="email"], 
+.modal input[type="password"],
+.modal input[type="date"] {
+  width: 60%;
+  padding: 0.4em 2em 0.4em 0.4em;
+  border: 1px solid #3300ff;
+  box-shadow: 02px 02px 02px rgba(0, 0, 0, 0.2);
+  border-radius: 05px;
+  margin: 0 0 10px 0;
+}
+
+.apresentacao img {
+  position: relative;
+  right: -10px;
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container.ativo {
+  display: block;
+}
+
+.modal {
+  width: 800px;
+  background: rgba(255, 255, 255);
+  margin: 50px auto;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 40px;
+  text-align: center;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 0, 1em;
+  color: #a5a5a5;
+}
+
+.btn-open-modal {
+  color: rgb(46, 46, 173) !important;
+}
+
+fieldset {
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+}
+
+.campo-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 01em;
+}
+
+.ativo .modal {
+  animation: show 1s forwards;
+}
+
+.btn {
+  width: 15%;
+  height: 100%;
+  border: 2px solid rgb(8, 47, 221);
+  background: rgb(8, 47, 221);
+  color: #fff;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.btn:hover {
+  color: rgb(0, 0, 0);
+  background: none;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 00, 00);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(00, 00, 00);
+  }
+}
