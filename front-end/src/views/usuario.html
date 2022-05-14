@@ -71,7 +71,7 @@
     <h1>Seja bem vindo(a) a Match TI</h1>
 
     <div class=" formula">
-        <form>
+        <form action="http://localhost:5000/profissional/atualizar" method="POST">
 
             <div>
                 <input type="image" src="" alt="">
@@ -82,49 +82,47 @@
                     <div class="form-row">
                         <div>
                             <label>Nome:</label>
-                            <input type="text" placeholder="Nome" required>
+                            <input type="text" required name="nome">
 
-                            <label>Area:</label>
-                            <input type="text" placeholder="area" required>
-
+                            <label>Nascimento:</label>
+                            <input type="date" placeholder="Nascimento" name="nascimento" readonly>
+                            
                         </div>
                     </div>
     
                     <div class="form-row">
                         <div>
                             <label>CPF:</label>
-                            <input type="number" placeholder="CPF" required>
+                            <input type="number" placeholder="CPF" required name="cpf" readonly>
+                            <input type="hidden" name="cpf">
     
                             <label>RG:</label>
-                            <input type="text" placeholder="RG" required>
+                            <input type="text" placeholder="RG" required name="rg" readonly>
                         </div>
                     </div>                    
                 </fieldset>
                 
                 <fieldset class="field-bottom">
                     <div class="group-form">
-    
-                        <label>Nascimento:</label>
-                        <br />
-                        <input type="date" placeholder="Nascimento">
-        
+                        <label>Area:</label>
+                        <input type="text" placeholder="area" required name="area">
+                                
                         <label>Telefone:</label>
-                        <input type="tel" placeholder="Telefone">
+                        <input type="tel" placeholder="Telefone" name="telefone">
         
                         <label>Cel:</label>
-                        <input type="tel" placeholder="Celular">
+                        <input type="tel" placeholder="Celular" name="celular">
         
                         <label>Email:</label>
-                        <input type="text" placeholder="Seu email">
+                        <input type="text" placeholder="Seu email" name="email">
                     </div>
                 </fieldset>
-
 
             </div>
             <fieldset>
                 <div class="group-form">
                     <label>Fale um pouquinho de você:</label><br />
-                    <textarea cols="120" rows="6" placeholder="biografia" required></textarea>
+                    <input placeholder="biografia" required name="descricao">
                 </div>
                 <div class="div-buttons-form">
                     <button type="submit">Salvar</button>
@@ -171,6 +169,28 @@
             }
         }
         linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+        var id = decodeURIComponent(window.location.search.match(/(\?|&)id\=([^&]*)/)[2]);
+        var url = `http://localhost:5000/profissional/${Math.trunc(parseInt(id))}`
+        json = reqJson(url);
+
+        document.getElementsByName("nome")[0].value = json.nome;
+        document.getElementsByName("nascimento")[0].value = json.nascimento;
+        document.getElementsByName("rg")[0].value = json.rg;
+        document.getElementsByName("cpf")[0].value = json.cpf;
+        document.getElementsByName("area")[0].value = json.area;
+        document.getElementsByName("telefone")[0].value = json.telefone;
+        document.getElementsByName("celular")[0].value = json.celular;
+        document.getElementsByName("email")[0].value = json.email;
+        document.getElementsByName("descricao")[0].value = json.descricao;
+
+        function reqJson(url_){
+            var request = new XMLHttpRequest();
+            request.open('GET', `${url_}`, false);
+            request.send();
+
+            return JSON.parse(request.responseText);
+        }
 
     </script>
 </body>

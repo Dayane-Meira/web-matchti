@@ -1,47 +1,12 @@
-const funcionarios = [
-  {
-    id: "0",
-    img: "/imgs/peoples/pexels-justin-shaifer-1222271.jpg",
-    nome: "jose",
-    area: "developer",
-    localidade: "",
-  },
-  {
-    id: "1",
-    img: "/imgs/peoples/pexels-pixabay-371160.jpg",
-    nome: "ana",
-    area: "developer",
-    localidade: "",
-  },
-  {
-    id: "2",
-    img: "/imgs/peoples/pexels-pixabay-371160.jpg",
-    nome: "Dayane",
-    area: "developer",
-    localidade: "",
-  },
-  {
-    id: "3",
-    img: "/imgs/peoples/pexels-pixabay-371160.jpg",
-    nome: "joao",
-    area: "developer",
-    localidade: "",
-  },
-  {
-    id: "4",
-    img: "/imgs/peoples/pexels-pixabay-371160.jpg",
-    nome: "layon",
-    area: "developer",
-    localidade: "",
-  },
-  {
-    id: "5",
-    img: "/imgs/peoples/pexels-pixabay-371160.jpg",
-    nome: "lucas",
-    area: "developer",
-    localidade: "",
-  },
-];
+function reqJson(){
+  var request = new XMLHttpRequest();
+  request.open('GET', 'http://localhost:5000/profissionais', false);
+  request.send();
+
+  return JSON.parse(request.responseText);
+}
+
+funcionarios = reqJson()
 
 innerHtmlFuncionarios = () => {
   var funcionariosTableHtml = document.querySelector(".cards");

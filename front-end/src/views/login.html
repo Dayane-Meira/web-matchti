@@ -36,17 +36,18 @@
                     <p>Lorem ipsum, dolor sit amet consectetur a.</p>
 
                     <button class="btn-account-google"> <img src="https://img.icons8.com/color/50/000000/google-logo.png" /> Entre com sua conta Google</button>
-                    <form action="" method="GET">
+                    <form action="http://localhost:5000/profissional/login" method="POST">
                         <label for="">Email</label>
                         <br>
-                        <input class="input-login" type="email">
+                        <input class="input-login" type="email" name="email">
                         <br>
                         <label for="">Password</label>
                         <br>
-                        <input class="input-login" type="password">
+                        <input class="input-login" type="password" name="senha">
+                        <br>
+                        <p>Não é registrado?<a href="" class="btn-open-modal"> Crie sua conta</a></p>
+                        <button type="submit" class="btn-login">Entrar</button>
                     </form>
-                    <p>Não é registrado?<a href="" class="btn-open-modal"> Crie sua conta</a></p>
-                        <a class="btn-login" href="usuario.html">Entrar</a>
             </section>
             <section class="area apresentacao">
                 <img src="/imgs/logo.jpg" alt="">
@@ -57,37 +58,58 @@
             <section class="modal">
                 <fieldset>
                     <h2>Preecha os campos abaixo</h2>
-                    <form action="" method="POST">
+                    <form action="http://localhost:5000/profissional/adicionar" method="POST">
                         <label for="">Seu nome</label>
                         
-                        <input type="text" placeholder="Nome" >
+                        <input type="text" placeholder="Nome" name="nome">
 
                         <label for="">Nascimento</label>
                         
-                        <input type="date" name="data-nascimento" id="">
-                        
-                        <label for="">Area</label>
-                        
-                        <input type="text" placeholder="area">
+                        <input type="date" name="nascimento">
 
                         <label for="">Email</label>
                         
-                        <input type="email">
+                        <input type="email" name="email">
                         
                         <label for="">Senha</label>
                         
-                        <input type="password">
+                        <input type="password" name="senha">
                         
                         <label for="">confirme sua senha</label>
                         
-                        <input type="password">
+                        <input type="password" name="senhaConfirma">
+                        
+                        <label for="">Telefone</label>
+                        
+                        <input type="text" name="telefone">
+                        
+                        <label for="">Celular</label>
+                        
+                        <input type="text" name="celular">
+                        
+                        <label for="">RG</label>
+                        
+                        <input type="text" name="rg">
+
+                        <label for="">CPF</label>
+                        
+                        <input type="text" placeholder="CPF" name="cpf">
+
+                        <label for="">Área</label>
+                        
+                        <input type="text" placeholder="area" name="area">
+
+                        <label for="">Descrição</label>
+                        
+                        <input type="text" placeholder="descricao" name="descricao">
+
+                        <div class="campo-btn">
+                            <input type="submit" class="btn btn-cadastrar"><br>
+                            <button class="btn btn-close-modal">Cancelar</button>
+                        </div>
 
                     </form>
                 </fieldset>
-                <div class="campo-btn">
-                    <button class="btn btn-cadastrar">Cadastrar</button><br>
-                    <button class="btn btn-close-modal">Cancelar</button>
-                </div>
             </section>
         </div>
     </div>
