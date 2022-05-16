@@ -44,8 +44,11 @@
                         <label for="">Password</label>
                         <br>
                         <input class="input-login" type="password" name="senha">
-                        <br>
-                        <p>Não é registrado?<a href="" class="btn-open-modal"> Crie sua conta</a></p>
+                        <br> 
+                        <div class="create"> 
+                         <p>Não é registrado?</p>
+                        <a href="" class="btn-open-modal"> Crie sua conta</a>
+                        </div>
                         <button type="submit" class="btn-login">Entrar</button>
                     </form>
             </section>
@@ -61,43 +64,43 @@
                     <form action="http://localhost:5000/profissional/adicionar" method="POST">
                         <label for="">Seu nome</label>
                         
-                        <input type="text" placeholder="Nome" name="nome">
+                        <input type="text" placeholder="Nome completo" name="nome">
 
                         <label for="">Nascimento</label>
                         
-                        <input type="date" name="nascimento">
+                        <input type="date" placeholder="Data de nascimento" name="nascimento">
 
                         <label for="">Email</label>
                         
-                        <input type="email" name="email">
+                        <input type="email" placeholder="Seu email" name="email">
                         
                         <label for="">Senha</label>
                         
-                        <input type="password" name="senha">
+                        <input type="password" placeholder="Senha" name="senha">
                         
-                        <label for="">confirme sua senha</label>
+                        <label for="">Confirme sua senha</label>
                         
-                        <input type="password" name="senhaConfirma">
+                        <input type="password" placeholder="Confirme sua senha"  name="senhaConfirma">
                         
                         <label for="">Telefone</label>
                         
-                        <input type="text" name="telefone">
+                        <input type="text" placeholder="Seu telefone" name="telefone">
                         
                         <label for="">Celular</label>
                         
-                        <input type="text" name="celular">
+                        <input type="text"placeholder="Seu celular" name="celular">
                         
                         <label for="">RG</label>
                         
-                        <input type="text" name="rg">
+                        <input type="text" placeholder="RG"  name="rg">
 
-                        <label for="">CPF</label>
+                        <label class="format_cpf" for="">CPF</label>
                         
                         <input type="text" placeholder="CPF" name="cpf">
 
                         <label for="">Área</label>
                         
-                        <input type="text" placeholder="area" name="area">
+                        <input type="text" placeholder="Area de atuação" name="area">
 
                         <label for="">Descrição</label>
                         

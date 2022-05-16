@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 /*===== GOOGLE FONTS =====*/
@@ -31,8 +32,17 @@ nav span {
 
 .menu li,
 a {
-  padding: 00 10px;
-  color: whitesmoke;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.menu li :hover{
+  color: crimson;
 }
 
 .container-content {
@@ -154,7 +164,8 @@ form {
 .modal label {
   display: block;
   margin-bottom: 0, 1em;
-  color: #a5a5a5;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn-open-modal {
@@ -208,4 +219,10 @@ fieldset {
     opacity: 1;
     transform: translate3d(00, 00, 00);
   }
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
