@@ -24,3 +24,4 @@ if (btnOpenModal && btnCloseModal && modal) {
     btnCloseModal.addEventListener("click", fecharModal);
     modal.addEventListener('click', fecharForaModal);
 }
+
