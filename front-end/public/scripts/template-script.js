@@ -15,11 +15,7 @@ innerHtmlFuncionarios = () => {
     funcionariosTableHtml.innerHTML +=
       `
       <div class="card">
-           <span>
-              <img class="column avatar" src="` +
-      val.img +
-      `" alt="avatar">
-                  </span>
+      
                     <div class="column name-tec">
                         ` +
       val.nome +
@@ -30,6 +26,11 @@ innerHtmlFuncionarios = () => {
       val.area +
       `
                     </div>
+                    <div class="column area-atuacao">
+                        ` +
+      val.email +
+      `
+      </div>
          <img src="https://img.icons8.com/windows/32/000000/like--v1.png" />
       </div>
     `;
